@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trivia question
+{% endblock %}
+
+{% block main %}
+    <h5>
+        Question {{streak + 1}}:
+    </h5>
+    <h2>
+        What is the {{gamemode}} of {{country}}?
+    </h2>
+    <form action="/trivia" method="post">
+        <input type="hidden" name="gamemode" value="{{ gamemode }}">
+        <input type="hidden" name="streak" value="{{ streak }}">
+        <input type="hidden" name="correctAnswer" value="{{ correctAnswer }}">
+
+        <section>
+            <div class="container">
+                <div class="row row row-cols-2 justify-content-center text-center">
+                    <div class="col mb-3">
+                        <button type="sumbit" name="answer" value="{{outOptions[0]}}" class="btn btn-primary btn-lg w-100 p-3" style="background-color: #339933; border-color: #339933; color: white;">
+                            {{outOptions[0]}}
+                        </button>
+                    </div>
+                    <div class="col mb-3">
+                        <button type="sumbit" name="answer" value="{{outOptions[1]}}" class="btn btn-primary btn-lg w-100 p-3" style="background-color: #339933; border-color: #339933; color: white;">
+                            {{outOptions[1]}}
+                        </button>
+                    </div>
+                    <div class="col mb-3">
+                        <button type="sumbit" name="answer" value="{{outOptions[2]}}" class="btn btn-primary btn-lg w-100 p-3" style="background-color: #339933; border-color: #339933; color: white;">
+                            {{outOptions[2]}}
+                        </button>
+                    </div>
+                    <div class="col mb-3">
+                        <button type="sumbit" name="answer" value="{{outOptions[3]}}" class="btn btn-primary btn-lg w-100 p-3" style="background-color: #339933; border-color: #339933; color: white;">
+                            {{outOptions[3]}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+{% endblock %}
