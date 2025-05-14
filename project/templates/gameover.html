@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Game over!
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">
+        Oh no! Game ended on a streak of: {{ streak }}
+    </h1>
+    <h4 class="text-center">
+        The correct answer was {{ correctAnswer }}
+    </h4>
+    <form action='/updateScores' method='post'>
+        <input type="hidden" name="streak" value="{{ streak }}">
+        <input type="hidden" name="gamemode" value="{{ gamemode }}">
+
+        <div class="mb2"> Enter name to add to scores: </div>
+        <div class="d-flex justify-content-center">
+            <input autocomplete="off" class="form-control text-center w-50" id="name" name="name" placeholder="Name" type="text">
+        </div>
+
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-lg w-50"
+                    style="background-color: #339933; border-color: #339933; color: white;">
+                Submit
+            </button>
+        </div>
+    </form>
+
+{% endblock %}
