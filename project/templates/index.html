@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <form action="/trivia" method="post">
+        <div class="mb-3">
+            <button class="form-control mx-auto btn btn-primary btn-lg w-50" style="background-color: #339933; border-color: #339933">Trivia</button>
+        </div>
+    </form>
+    <form action="/list" method="post">
+        <div class="mb-3">
+            <button style="background-color: #339933; border-color: #339933" class="form-control mx-auto btn btn-primary btn-lg w-50" countryName=None countryCapital=None>List</button>
+        </div>
+    </form>
+{% endblock %}
